@@ -22,7 +22,7 @@
             <!-- Account -->
             <div class="card-body">
                 <div class="d-flex align-items-start align-items-sm-center gap-4">
-                    <img src="{{ auth()->guard('admin')->user()->profile ? auth()->user()->guard('admin')->profile : env('DICEBEAR_LINK'). auth()->guard('admin')->user()->name }}"
+                    <img src="{{ auth()->guard('admin')->user()->profile ? auth()->user()->guard('admin')->profile : env('DICEBEAR'). auth()->guard('admin')->user()->name }}"
                         alt="user-avatar" class="d-block rounded" height="100" width="100" id="uploadedAvatar">
                     <div class="button-wrapper">
                         <form action="">
@@ -54,8 +54,8 @@
                         </div>
                         <div class="mb-3 col-md-6">
                             <label for="email" class="form-label">E-mail</label>
-                            <input class="form-control" type="text" id="email" name="email" value="{{auth()->guard('admin')->user()->email }}"
-                                placeholder="john.doe@example.com">
+                            <input class="form-control" type="text" id="email" name="email"
+                                value="{{auth()->guard('admin')->user()->email }}" placeholder="john.doe@example.com">
                         </div>
                         <div class="mb-3 col-md-6">
                             <label class="form-label" for="phoneNumber">Phone Number</label>

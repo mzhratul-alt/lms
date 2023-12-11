@@ -141,7 +141,7 @@
                 <div data-i18n="Analytics">Dashboard</div>
               </a>
             </li>
-            {{-- <li class="menu-item">
+            <li class="menu-item">
                 <a href="javascript:void(0);" class="menu-link menu-toggle">
                   <i class="menu-icon tf-icons bx bx-dock-top"></i>
                   <div data-i18n="Account Settings">Teacher</div>
@@ -178,11 +178,17 @@
                 </ul>
               </li>
               <li class="menu-item">
-                <a href="{{ route('admin.student.studentList') }}" class="menu-link">
+                <a href="{{ route('admin.student.index') }}" class="menu-link">
                   <i class="menu-icon tf-icons bx bx-home-circle"></i>
                   <div data-i18n="Analytics">Student</div>
                 </a>
-              </li> --}}
+              </li>
+              <li class="menu-item">
+                <a href="{{ route('admin.enrollment.index') }}" class="menu-link">
+                  <i class="menu-icon tf-icons bx bx-home-circle"></i>
+                  <div data-i18n="Analytics">Enrollment</div>
+                </a>
+              </li>
 
             </ul>
         </aside>
@@ -213,6 +219,7 @@
                 </div>
               </div>
               <!-- /Search -->
+              <a target="_blank" href="{{ route('frontend.home') }}" class="btn btn-primary ms-4">Visit Website</a>
 
               <ul class="navbar-nav flex-row align-items-center ms-auto">
 
@@ -220,7 +227,7 @@
                 <li class="nav-item navbar-dropdown dropdown-user dropdown">
                   <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
                     <div class="avatar avatar-online">
-                      <img src="{{ auth()->guard('admin')->user()->profile_picture ? auth()->guard('admin')->user()->profile_picture : env('DICEBEAR_LINK'). auth()->guard('admin')->user()->first_name }}" alt class="w-px-40 h-auto rounded-circle" />
+                      <img src="{{ auth()->guard('admin')->user()->profile ? auth()->guard('admin')->user()->profile : env('DICEBEAR'). auth()->guard('admin')->user()->name }}" alt class="w-px-40 h-auto rounded-circle" />
                     </div>
                   </a>
                   <ul class="dropdown-menu dropdown-menu-end">
@@ -229,7 +236,7 @@
                         <div class="d-flex">
                           <div class="flex-shrink-0 me-3">
                             <div class="avatar avatar-online">
-                              <img src="{{ auth()->guard('admin')->user()->profile_picture ? auth()->guard('admin')->user()->profile_picture : env('DICEBEAR_LINK'). auth()->guard('admin')->user()->first_name }}" alt class="w-px-40 h-auto rounded-circle" />
+                              <img src="{{ auth()->guard('admin')->user()->profile ? auth()->guard('admin')->user()->profile : env('DICEBEAR'). auth()->guard('admin')->user()->name }}" alt class="w-px-40 h-auto rounded-circle" />
                             </div>
                           </div>
                           <div class="flex-grow-1">

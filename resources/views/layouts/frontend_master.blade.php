@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title> Education | Template </title>
+        <title> @yield('page_title') </title>
         <meta name="description" content>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="manifest" href="https://preview.colorlib.com/theme/onlineedu/site.webmanifest">
@@ -65,8 +65,8 @@
                                     </div>
                                     <div class="header-info-right">
                                         <ul>
-                                            <li><a href="{{ route('student.login') }}"><i class="ti-user"></i>Login</a></li>
-                                            <li><a href="{{ route('student.register') }}"><i class="ti-lock"></i>Register</a></li>
+                                            <li><a target="_blank" href="{{ route('student.login') }}"><i class="ti-user"></i>Login</a></li>
+                                            <li><a target="_blank" href="{{ route('student.register') }}"><i class="ti-lock"></i>Register</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -82,18 +82,17 @@
                             <div class="menu-wrapper justify-content-center">
 
                                 <div class="logo logo2 d-block d-lg-none">
-                                    <a href="{{ route('home') }}"><img src="assets/img/logo/logo.png" alt></a>
+                                    <a href="{{ route('frontend.home') }}"><img src="assets/img/logo/logo.png" alt></a>
                                 </div>
 
                                 <div class="main-menu d-none d-lg-block">
                                     <nav>
                                         <ul id="navigation">
-                                            <li><a href="{{ route('home') }}">Home</a></li>
-                                            <li><a href="{{ route('about') }}">About</a></li>
-                                            <li><a
-                                                    href="{{ route('courses') }}">Courses</a></li>
-                                            <li><a href="{{ route('teachers') }}">Instructors</a></li>
-                                            <li><a href="{{ route('contact') }}">Contact</a></li>
+                                            <li><a href="{{ route('frontend.home') }}">Home</a></li>
+                                            <li><a href="{{ route('frontend.about') }}">About</a></li>
+                                            <li><a href="{{ route('frontend.courses') }}">Courses</a></li>
+                                            <li><a href="{{ route('frontend.teachers') }}">Instructors</a></li>
+                                            <li><a href="{{ route('frontend.contact') }}">Contact</a></li>
                                         </ul>
                                     </nav>
                                 </div>

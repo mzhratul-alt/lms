@@ -17,6 +17,7 @@ class StudentSeeder extends Seeder
         $student = new Student();
         $student->name = "Student";
         $student->email = "student@gmail.com";
+        $student->phone = "01800000000";
         $student->password = Hash::make('123456789');
         $student->save();
     }

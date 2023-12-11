@@ -110,20 +110,25 @@
                 <form id="formAuthentication" class="mb-3" action="{{ route('student.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                   <div class="mb-3">
-                    <label for="first_name" class="form-label">First Name</label>
-                    <input type="text" class="form-control" id="first_name" name="first_name" placeholder="Enter your First Name" autofocus>
-                  </div>
-                  <div class="mb-3">
-                    <label for="last_name" class="form-label">Last Name</label>
-                    <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Enter your Last Name" autofocus>
+                    <label for="first_name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="first_name" name="name" placeholder="Enter your First Name" autofocus>
+                    @error('name')
+                    <p class="text-danger">{{ $message }}</p>
+                    @enderror
                   </div>
                   <div class="mb-3">
                     <label for="phone" class="form-label">Phone</label>
                     <input type="text" class="form-control" id="phone" name="phone" placeholder="Enter your Phone" autofocus>
+                    @error('phone')
+                    <p class="text-danger">{{ $message }}</p>
+                    @enderror
                   </div>
                   <div class="mb-3">
                     <label for="email" class="form-label">Email</label>
                     <input type="text" class="form-control" id="email" name="email" placeholder="Enter your email">
+                    @error('email')
+                    <p class="text-danger">{{ $message }}</p>
+                    @enderror
                   </div>
                   <div class="mb-3 form-password-toggle">
                     <label class="form-label" for="password">Password</label>
@@ -131,19 +136,16 @@
                       <input type="password" id="password" class="form-control" name="password" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" aria-describedby="password" />
                       <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
                     </div>
+                      @error('password')
+                        <p class="text-danger">{{ $message }}</p>
+                        @enderror
                   </div>
                   <div class="mb-3">
                     <label for="profile" class="form-label">Profile Picture</label>
                     <input type="file" class="form-control" id="profile" name="profile">
-                  </div>
-                  <div class="mb-3">
-                    <label for="course" class="form-label">Select Your Course</label>
-                    <select name="course" id="course" class="form-select">
-                        <option selected disabled>Select Your Course</option>
-                        @foreach ($courses as $course)
-                        <option value="{{ $course->id }}">{{ $course->title }}</option>
-                        @endforeach
-                    </select>
+                    @error('profile')
+                    <p class="text-danger">{{ $message }}</p>
+                    @enderror
                   </div>
                   <button class="btn btn-primary d-grid w-100">
                     Sign up

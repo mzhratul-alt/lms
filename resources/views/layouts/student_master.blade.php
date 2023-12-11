@@ -170,14 +170,14 @@
                 </div>
               </div>
               <!-- /Search -->
-
+              <a target="_blank" href="{{ route('frontend.home') }}" class="btn btn-primary ms-4">Visit Website</a>
               <ul class="navbar-nav flex-row align-items-center ms-auto">
 
                 <!-- User -->
                 <li class="nav-item navbar-dropdown dropdown-user dropdown">
                   <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
                     <div class="avatar avatar-online">
-                      <img src="{{ auth()->guard('student')->user()->profile_picture ? auth()->guard('student')->user()->profile_picture : env('DICEBEAR_LINK'). auth()->guard('student')->user()->name }}" alt class="w-px-40 h-auto rounded-circle" />
+                      <img src="{{ auth()->guard('student')->user()->profile_picture ? auth()->guard('student')->user()->profile_picture : env('DICEBEAR'). auth()->guard('student')->user()->name }}" alt class="w-px-40 h-auto rounded-circle" />
                     </div>
                   </a>
                   <ul class="dropdown-menu dropdown-menu-end">
@@ -186,12 +186,12 @@
                         <div class="d-flex">
                           <div class="flex-shrink-0 me-3">
                             <div class="avatar avatar-online">
-                              <img src="{{ auth()->guard('student')->user()->profile_picture ? auth()->guard('student')->user()->profile_picture : env('DICEBEAR_LINK'). auth()->guard('student')->user()->name }}" alt class="w-px-40 h-auto rounded-circle" />
+                              <img src="{{ auth()->guard('student')->user()->profile ? auth()->guard('student')->user()->profile : env('DICEBEAR'). auth()->guard('student')->user()->name }}" alt class="w-px-40 h-auto rounded-circle" />
                             </div>
                           </div>
                           <div class="flex-grow-1">
                             <span class="fw-semibold d-block">{{auth()->guard('student')->user()->name }}</span>
-                            <small class="text-muted">Admin</small>
+                            <small class="text-muted">Student</small>
                           </div>
                         </div>
                       </a>
