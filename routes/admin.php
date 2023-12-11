@@ -6,7 +6,7 @@ use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\DashboardController;
 
 //Guest Route Group
-Route::middleware(['guest:admin'])->group(function () {
+Route::middleware(['guest'])->group(function () {
     // Admin Auth Route
     Route::get('/', function () {
         return redirect()->route('admin.login');

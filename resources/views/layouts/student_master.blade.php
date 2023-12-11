@@ -135,55 +135,12 @@
 
           <ul class="menu-inner py-1">
             <!-- Dashboard -->
-            <li class="menu-item {{ Route::is('admin.dashboard') ? 'active':'' }}">
-              <a href="{{ route('admin.dashboard') }}" class="menu-link">
+            <li class="menu-item {{ Route::is('student.dashboard') ? 'active':'' }}">
+              <a href="{{ route('student.dashboard') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-home-circle"></i>
                 <div data-i18n="Analytics">Dashboard</div>
               </a>
             </li>
-
-            <li class="menu-item">
-                <a href="javascript:void(0);" class="menu-link menu-toggle">
-                  <i class="menu-icon tf-icons bx bx-dock-top"></i>
-                  <div data-i18n="Account Settings">Teacher</div>
-                </a>
-                <ul class="menu-sub">
-                  <li class="menu-item">
-                    <a href="{{ route('admin.teacher.index') }}" class="menu-link">
-                      <div data-i18n="Account">All Teacher</div>
-                    </a>
-                  </li>
-                  <li class="menu-item">
-                    <a href="{{ route('admin.teacher.create') }}" class="menu-link">
-                      <div data-i18n="Account">Add New</div>
-                    </a>
-                  </li>
-                </ul>
-              </li>
-            <li class="menu-item">
-                <a href="javascript:void(0);" class="menu-link menu-toggle">
-                  <i class="menu-icon tf-icons bx bx-dock-top"></i>
-                  <div data-i18n="Account Settings">Course</div>
-                </a>
-                <ul class="menu-sub">
-                  <li class="menu-item">
-                    <a href="{{ route('admin.course.index') }}" class="menu-link">
-                      <div data-i18n="Account">All Course</div>
-                    </a>
-                  </li>
-                  <li class="menu-item">
-                    <a href="{{ route('admin.course.create') }}" class="menu-link">
-                      <div data-i18n="Account">Add New</div>
-                    </a>
-                  </li>
-                </ul>
-              </li>
-              <li class="menu-item">
-                <a href="{{ route('admin.student.studentList') }}" class="menu-link">
-                  <i class="menu-icon tf-icons bx bx-home-circle"></i>
-                  <div data-i18n="Analytics">Student</div>
-                </a>
-              </li>
           </ul>
         </aside>
         <!-- / Menu -->
@@ -220,20 +177,20 @@
                 <li class="nav-item navbar-dropdown dropdown-user dropdown">
                   <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
                     <div class="avatar avatar-online">
-                      <img src="{{ auth()->guard('admin')->user()->profile_picture ? auth()->guard('admin')->user()->profile_picture : env('DICEBEAR_LINK'). auth()->guard('admin')->user()->first_name }}" alt class="w-px-40 h-auto rounded-circle" />
+                      <img src="{{ auth()->guard('student')->user()->profile_picture ? auth()->guard('student')->user()->profile_picture : env('DICEBEAR_LINK'). auth()->guard('student')->user()->name }}" alt class="w-px-40 h-auto rounded-circle" />
                     </div>
                   </a>
                   <ul class="dropdown-menu dropdown-menu-end">
                     <li>
-                      <a class="dropdown-item" href="{{ route('admin.profile') }}">
+                      <a class="dropdown-item" href="{{ route('student.profile') }}">
                         <div class="d-flex">
                           <div class="flex-shrink-0 me-3">
                             <div class="avatar avatar-online">
-                              <img src="{{ auth()->guard('admin')->user()->profile_picture ? auth()->guard('admin')->user()->profile_picture : env('DICEBEAR_LINK'). auth()->guard('admin')->user()->first_name }}" alt class="w-px-40 h-auto rounded-circle" />
+                              <img src="{{ auth()->guard('student')->user()->profile_picture ? auth()->guard('student')->user()->profile_picture : env('DICEBEAR_LINK'). auth()->guard('student')->user()->name }}" alt class="w-px-40 h-auto rounded-circle" />
                             </div>
                           </div>
                           <div class="flex-grow-1">
-                            <span class="fw-semibold d-block">{{auth()->guard('admin')->user()->first_name." ".auth()->guard('admin')->user()->last_name }}</span>
+                            <span class="fw-semibold d-block">{{auth()->guard('student')->user()->name }}</span>
                             <small class="text-muted">Admin</small>
                           </div>
                         </div>
@@ -243,7 +200,7 @@
                       <div class="dropdown-divider"></div>
                     </li>
                     <li>
-                      <a class="dropdown-item" href="{{ route('admin.profile') }}">
+                      <a class="dropdown-item" href="{{ route('student.profile') }}">
                         <i class="bx bx-user me-2"></i>
                         <span class="align-middle">My Profile</span>
                       </a>
@@ -280,7 +237,7 @@
             <!-- Content -->
 
             <div class="container-xxl flex-grow-1 container-p-y">
-                @yield('admin_main_content')
+                @yield('student_main_content')
             </div>
             <!-- / Content -->
 
@@ -329,7 +286,7 @@
               <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
                 Cancel
               </button>
-              <a href="{{ route('admin.logout') }}" class="btn btn-primary">Logout</a>
+              <a href="{{ route('student.logout') }}" class="btn btn-primary">Logout</a>
             </div>
           </div>
         </div>

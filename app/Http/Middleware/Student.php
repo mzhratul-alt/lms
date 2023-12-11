@@ -16,7 +16,7 @@ class Student
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (Auth::guard('student')->check() && $request->expectsJson()) {
+        if (Auth::guard('student')->check()) {
             return $next($request);
         }
         return redirect()->route('student.login');

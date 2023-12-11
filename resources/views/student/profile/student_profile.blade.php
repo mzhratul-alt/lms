@@ -1,6 +1,6 @@
-@extends('layouts.admin_master')
-@section('page_title', 'Admin - Profile')
-@section('admin_main_content')
+@extends('layouts.student_master')
+@section('page_title', 'Student - Profile')
+@section('student_main_content')
 <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Profile Settings /</span> My Profile</h4>
 <div class="row">
     <div class="col-md-12">
@@ -22,7 +22,7 @@
             <!-- Account -->
             <div class="card-body">
                 <div class="d-flex align-items-start align-items-sm-center gap-4">
-                    <img src="{{ auth()->guard('admin')->user()->profile ? auth()->user()->guard('admin')->profile : env('DICEBEAR_LINK'). auth()->guard('admin')->user()->name }}"
+                    <img src="{{ auth()->guard('student')->user()->profile ? auth()->guard('student')->user()->profile : env('DICEBEAR_LINK'). auth()->guard('student')->user()->name }}"
                         alt="user-avatar" class="d-block rounded" height="100" width="100" id="uploadedAvatar">
                     <div class="button-wrapper">
                         <form action="">
@@ -50,11 +50,11 @@
                         <div class="mb-3 col-md-6">
                             <label for="firstName" class="form-label">First Name</label>
                             <input class="form-control" type="text" id="firstName" name="firstName"
-                                value="{{auth()->guard('admin')->user()->name }}" autofocus="">
+                                value="{{auth()->guard('student')->user()->name }}" autofocus="">
                         </div>
                         <div class="mb-3 col-md-6">
                             <label for="email" class="form-label">E-mail</label>
-                            <input class="form-control" type="text" id="email" name="email" value="{{auth()->guard('admin')->user()->email }}"
+                            <input class="form-control" type="text" id="email" name="email" value="{{auth()->guard('student')->user()->email }}"
                                 placeholder="john.doe@example.com">
                         </div>
                         <div class="mb-3 col-md-6">
@@ -62,7 +62,7 @@
                             <div class="input-group input-group-merge">
                                 {{-- <span class="input-group-text">BD (+880)</span> --}}
                                 <input type="text" id="phoneNumber" name="phoneNumber" class="form-control"
-                                    placeholder="202 555 0111" value="{{auth()->guard('admin')->user()->phone }}">
+                                    placeholder="202 555 0111" value="{{auth()->guard('student')->user()->phone }}">
                             </div>
                         </div>
                         <div class="mb-3 col-md-6">

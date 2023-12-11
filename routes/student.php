@@ -1,9 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Student\AuthController;
+use App\Http\Controllers\Student\ProfileController;
+use App\Http\Controllers\Student\DashboardController;
 
 //Guest Route Group
-Route::middleware(['guest:student'])->group(function () {
+Route::middleware(['guest'])->group(function () {
     // Admin Auth Route
     Route::get('/', function () {
         return redirect()->route('admin.login');

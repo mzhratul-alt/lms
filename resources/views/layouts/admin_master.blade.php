@@ -141,8 +141,7 @@
                 <div data-i18n="Analytics">Dashboard</div>
               </a>
             </li>
-
-            <li class="menu-item">
+            {{-- <li class="menu-item">
                 <a href="javascript:void(0);" class="menu-link menu-toggle">
                   <i class="menu-icon tf-icons bx bx-dock-top"></i>
                   <div data-i18n="Account Settings">Teacher</div>
@@ -183,8 +182,9 @@
                   <i class="menu-icon tf-icons bx bx-home-circle"></i>
                   <div data-i18n="Analytics">Student</div>
                 </a>
-              </li>
-          </ul>
+              </li> --}}
+
+            </ul>
         </aside>
         <!-- / Menu -->
 
@@ -233,7 +233,7 @@
                             </div>
                           </div>
                           <div class="flex-grow-1">
-                            <span class="fw-semibold d-block">{{auth()->guard('admin')->user()->first_name." ".auth()->guard('admin')->user()->last_name }}</span>
+                            <span class="fw-semibold d-block">{{auth()->guard('admin')->user()->name}}</span>
                             <small class="text-muted">Admin</small>
                           </div>
                         </div>
