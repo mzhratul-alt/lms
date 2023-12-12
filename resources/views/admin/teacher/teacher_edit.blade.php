@@ -6,7 +6,8 @@
         <h3>Update Teacher</h3>
     </div>
     <div class="card-body">
-        <form class="row" action="{{ route('admin.teacher.update', $teacher->id) }}" method="POST" enctype="multipart/form-data">
+        <form class="row" action="{{ route('admin.teacher.update', $teacher->id) }}" method="POST"
+            enctype="multipart/form-data">
             @csrf
             @method('PUT')
             <div class="col-lg-6 mb-3">
@@ -20,6 +21,20 @@
                 <label for="">Designation</label>
                 <input type="text" name="designation" id="" class="form-control" value="{{ $teacher->designation }}">
                 @error('designation')
+                <small class="text-danger">{{$message}}</small>
+                @enderror
+            </div>
+            <div class="col-lg-6 mb-3">
+                <label for="">Facebook URL</label>
+                <input type="text" name="facebook" id="" class="form-control" value="{{ $teacher->facebook }}">
+                @error('facebook')
+                <small class="text-danger">{{$message}}</small>
+                @enderror
+            </div>
+            <div class="col-lg-6 mb-3">
+                <label for="">Twitter URL</label>
+                <input type="text" name="twitter" id="" class="form-control" value="{{ $teacher->twitter }}">
+                @error('twitter')
                 <small class="text-danger">{{$message}}</small>
                 @enderror
             </div>

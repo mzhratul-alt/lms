@@ -27,7 +27,7 @@
                     <div class="single-course mb-40 ">
                         <div class="course-img">
                             <img src="{{$course->thumbnail == 'dummy.png'?env('PLACEHOLDER').$course->title: asset('storage/courses/'.$course->thumbnail) }}"
-                                alt="{{ $course->title }}" style="width: 100%">
+                                alt="{{ $course->title }}" style="width: 100%; height: 250px; object-fit: cover; object-position: center;">
                         </div>
                         <div class="course-caption">
                             <div class="course-cap-top">

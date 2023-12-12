@@ -39,14 +39,21 @@ class FrontendController extends Controller
             "txn_id" => "required"
         ]);
 
-        $enrollment = new Enrollment();
-        $enrollment->course_id = $id;
-        $enrollment->student_id = auth()->guard('student')->id();
-        $enrollment->payment_method = $request->payment_method;
-        $enrollment->phone_number = $request->phone_number;
-        $enrollment->txn_id = $request->txn_id;
-        $enrollment->save();
-        return back();
+        $previousEnrollment = Enrollment::where('course_id', $id)
+            ->where('student_id', auth()->guard('student')->id())->count();
+
+        if ($previousEnrollment < 0) {
+            $enrollment = new Enrollment();
+            $enrollment->course_id = $id;
+            $enrollment->student_id = auth()->guard('student')->id();
+            $enrollment->payment_method = $request->payment_method;
+            $enrollment->phone_number = $request->phone_number;
+            $enrollment->txn_id = $request->txn_id;
+            $enrollment->save();
+            return back();
+        }else{
+            return back()->with('error', 'Already enroll to the course.');
+        }
     }
 
     public function teachers()

@@ -16,6 +16,8 @@ return new class extends Migration
             $table->string('name');
             $table->string('designation');
             $table->string('profile');
+            $table->string('facebook')->default('https://www.facebook.com');
+            $table->string('twitter')->default('https://www.twitter.com');
             $table->timestamps();
         });
     }

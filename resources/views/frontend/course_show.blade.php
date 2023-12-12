@@ -61,8 +61,12 @@
                     <a class="btn btn-primary" href="{{ route('student.register') }}">Register</a>
                     @endguest
                     @auth('student')
-                    <form class="row" action="{{ route('frontend.courseEnrollment', $course->id) }}"
-                        method="POST">
+                    @if(Session::has('error'))
+                    <div style="background: #bb1500; color: #ffffff; padding: 20px; border-radius: 5px; margin-bottom: 20px;">
+                        {{ Session('error') }}
+                    </div>
+                    @endif
+                    <form class="row" action="{{ route('frontend.courseEnrollment', $course->id) }}" method="POST">
                         @csrf
                         <div class="col-12">
                             <div class="form-check mb-2">

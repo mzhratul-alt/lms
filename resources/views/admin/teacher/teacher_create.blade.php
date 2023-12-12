@@ -22,6 +22,20 @@
                 <small class="text-danger">{{$message}}</small>
                 @enderror
             </div>
+            <div class="col-lg-6 mb-3">
+                <label for="">Facebook URL</label>
+                <input type="text" name="facebook" id="" class="form-control">
+                @error('facebook')
+                <small class="text-danger">{{$message}}</small>
+                @enderror
+            </div>
+            <div class="col-lg-6 mb-3">
+                <label for="">Twitter URL</label>
+                <input type="text" name="twitter" id="" class="form-control">
+                @error('twitter')
+                <small class="text-danger">{{$message}}</small>
+                @enderror
+            </div>
             <div class="col-lg-12 mb-3">
                 <label for="">Profile</label>
                 <input type="file" name="profile" id="" class="form-control">

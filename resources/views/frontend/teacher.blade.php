@@ -25,13 +25,13 @@
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="single-team mb-30">
                         <div class="team-img">
-                            <img src="{{ $teacher->profile == 'dummy.png'?env('PLACEHOLDER').$teacher->name:asset('storage/teachers/'.$teacher->profile) }}"
+                            <img style="width: 100%; height: 200px; object-fit: cover; object-position: top center;" src="{{ $teacher->profile == 'dummy.png'?env('PLACEHOLDER').$teacher->name:asset('storage/teachers/'.$teacher->profile) }}"
                                 alt>
 
                             <ul class="team-social">
-                                <li><a target="_blank" href="https://www.facebook.com"><i
+                                <li><a target="_blank" href="{{ $teacher->facebook }}"><i
                                             class="fab fa-facebook-f"></i></a></li>
-                                <li><a target="_blank" href="https://www.twitter.com"><i class="fab fa-twitter"></i></a>
+                                <li><a target="_blank" href="{{ $teacher->twitter }}"><i class="fab fa-twitter"></i></a>
                                 </li>
                             </ul>
                         </div>

@@ -50,6 +50,8 @@ class TeacherController extends Controller
         $teacher->name = $request->name;
         $teacher->designation = $request->designation;
         $teacher->profile = $profile;
+        $teacher->facebook = $request->facebook;
+        $teacher->twitter = $request->twitter;
         $teacher->save();
         return back();
     }
@@ -88,6 +90,8 @@ class TeacherController extends Controller
         $teacher->name = $request->name;
         $teacher->designation = $request->designation;
         $teacher->profile = $profile;
+        $teacher->facebook = $request->facebook;
+        $teacher->twitter = $request->twitter;
         $teacher->update();
         return back();
     }

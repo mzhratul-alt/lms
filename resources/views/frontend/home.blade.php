@@ -240,12 +240,13 @@
                 <div class="col-xl-4 col-lg-4 col-md-6">
                     <div class="single-course mb-40 ">
                         <div class="course-img">
-                            <img src="{{ $course->thumbnail == 'dummy.png'?env('PLACEHOLDER').$course->title:asset('storage/courses/'.$course->thumbnail) }}"
+                            <img style="width: 100%; height: 250px; object-fit: cover; object-position: center;" src="{{ $course->thumbnail == 'dummy.png'?env('PLACEHOLDER').$course->title:asset('storage/courses/'.$course->thumbnail) }}"
                                 alt>
                         </div>
                         <div class="course-caption">
                             <div class="course-cap-top">
-                                <h4><a href="{{ route('frontend.courseShow', $course->id) }}">{{ $course->title }}</a></h4>
+                                <h4><a href="{{ route('frontend.courseShow', $course->id) }}">{{ $course->title }}</a>
+                                </h4>
                             </div>
                             <div class="course-cap-bottom d-flex justify-content-between">
                                 <ul>
@@ -285,12 +286,12 @@
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="single-team mb-30">
                         <div class="team-img">
-                            <img src="{{ $teacher->profile == 'dummy.png'?env('PLACEHOLDER').$teacher->name:asset('storage/teachers/'.$teacher->profile) }}"
+                            <img style="width: 100%; height: 200px; object-fit: cover; object-position: top center;" src="{{ $teacher->profile == 'dummy.png'?env('PLACEHOLDER').$teacher->name:asset('storage/teachers/'.$teacher->profile) }}"
                                 alt>
                             <ul class="team-social">
-                                <li><a target="_blank" href="https://www.facebook.com"><i
+                                <li><a target="_blank" href="{{ $teacher->facebook }}"><i
                                             class="fab fa-facebook-f"></i></a></li>
-                                <li><a target="_blank" href="https://www.twitter.com"><i class="fab fa-twitter"></i></a>
+                                <li><a target="_blank" href="{{ $teacher->twitter }}"><i class="fab fa-twitter"></i></a>
                                 </li>
                             </ul>
                         </div>
@@ -350,68 +351,6 @@
             </div>
         </div>
     </div>
-
-
-    <div class="testimonial-area fix pt-180 pb-180 section-bg" data-background="assets/img/gallery/section_bg03.png">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-xl-8 col-lg-9 col-md-9">
-                    <div class="h1-testimonial-active">
-
-                        <div class="single-testimonial pt-65">
-
-                            <div class="testimonial-icon mb-45">
-                                <img src="assets/img/gallery/testimonial.png" class="ani-btn " alt>
-                            </div>
-
-                            <div class="testimonial-caption text-center">
-                                <p>You can’t succeed if you just do what others do and
-                                    follow the well-worn path. You need to create a new and
-                                    original path for yourself.</p>
-
-                                <div class="testimonial-ratting">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <div class="rattiong-caption">
-                                    <span>Clifford Frazier<span> - Colorlib Themes</span> </span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="single-testimonial pt-65">
-
-                            <div class="testimonial-icon mb-45">
-                                <img src="assets/img/gallery/testimonial.png" class="ani-btn " alt>
-                            </div>
-
-                            <div class="testimonial-caption text-center">
-                                <p>You can’t succeed if you just do what others do and
-                                    follow the well-worn path. You need to create a new and
-                                    original path for yourself. </p>
-
-                                <div class="testimonial-ratting">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <div class="rattiong-caption">
-                                    <span>Clifford Frazier<span> - Colorlib Themes</span> </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
     <div class="home-blog-area section-padding30">
         <div class="container">
 

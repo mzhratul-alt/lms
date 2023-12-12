@@ -14,8 +14,8 @@ class TeacherSeeder extends Seeder
     public function run(): void
     {
         $teacher = new Teacher();
-        $teacher->name = "Md. Zahid Hossain";
-        $teacher->designation = "Dept. Head";
+        $teacher->name = "Md Badiuzzaman Biplob";
+        $teacher->designation = "Instructor";
         $teacher->profile = "dummy.png";
         $teacher->save();
     }
