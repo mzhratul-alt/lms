@@ -24,9 +24,6 @@ class RedirectIfAuthenticated
                 case 'admin':
                     return redirect()->route('admin.dashboard');
                     break;
-                case 'student':
-                    return redirect()->route('student.dashboard');
-                    break;
             }
         }
 

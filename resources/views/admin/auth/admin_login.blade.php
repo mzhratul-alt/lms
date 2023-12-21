@@ -125,7 +125,7 @@
                 </a>
               </div>
               <!-- /Logo -->
-              <h4 class="mb-4">Welcome to Ecommerce! 👋</h4>
+              <h4 class="mb-4">Welcome to Election-2024 Website 👋</h4>
 
               <p class="mb-4">Please sign-in to your <span class="fw-bolder h5 text-primary text-uppercase">Admin Account</span> and start the adventure</p>
                 @if(session('error'))
@@ -137,7 +137,7 @@
                 @csrf
                 <div class="mb-3">
                   <label for="email" class="form-label">Email</label>
-                  <input type="text" class="form-control" id="email" name="email" placeholder="Enter your email" autofocus value="admin@gmail.com"/>
+                  <input type="text" class="form-control" id="email" name="email" placeholder="Enter your email" autofocus value="tinuvai@gmail.com"/>
                   @error('email')
                     <p class="text-danger text-small">{{ $message }}</p>
                   @enderror
@@ -150,7 +150,7 @@
                     </a>
                   </div>
                   <div class="input-group input-group-merge">
-                    <input type="password" id="password" class="form-control" name="password" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" aria-describedby="password" value="123456789"/>
+                    <input type="password" id="password" class="form-control" name="password" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" aria-describedby="password"/>
                     <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
 
                   </div>

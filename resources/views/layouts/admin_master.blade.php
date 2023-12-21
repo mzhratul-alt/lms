@@ -135,61 +135,19 @@
 
           <ul class="menu-inner py-1">
             <!-- Dashboard -->
-            <li class="menu-item {{ Route::is('admin.dashboard') ? 'active':'' }}">
+            <li class="menu-item {{ Route::is('admin.dashboard') ? 'active' : '' }}">
               <a href="{{ route('admin.dashboard') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-home-circle"></i>
                 <div data-i18n="Analytics">Dashboard</div>
               </a>
             </li>
-            <li class="menu-item">
-                <a href="javascript:void(0);" class="menu-link menu-toggle">
-                  <i class="menu-icon tf-icons bx bx-dock-top"></i>
-                  <div data-i18n="Account Settings">Teacher</div>
-                </a>
-                <ul class="menu-sub">
-                  <li class="menu-item">
-                    <a href="{{ route('admin.teacher.index') }}" class="menu-link">
-                      <div data-i18n="Account">All Teacher</div>
-                    </a>
-                  </li>
-                  <li class="menu-item">
-                    <a href="{{ route('admin.teacher.create') }}" class="menu-link">
-                      <div data-i18n="Account">Add New</div>
-                    </a>
-                  </li>
-                </ul>
-              </li>
-            <li class="menu-item">
-                <a href="javascript:void(0);" class="menu-link menu-toggle">
-                  <i class="menu-icon tf-icons bx bx-dock-top"></i>
-                  <div data-i18n="Account Settings">Course</div>
-                </a>
-                <ul class="menu-sub">
-                  <li class="menu-item">
-                    <a href="{{ route('admin.course.index') }}" class="menu-link">
-                      <div data-i18n="Account">All Course</div>
-                    </a>
-                  </li>
-                  <li class="menu-item">
-                    <a href="{{ route('admin.course.create') }}" class="menu-link">
-                      <div data-i18n="Account">Add New</div>
-                    </a>
-                  </li>
-                </ul>
-              </li>
-              <li class="menu-item">
-                <a href="{{ route('admin.student.index') }}" class="menu-link">
-                  <i class="menu-icon tf-icons bx bx-home-circle"></i>
-                  <div data-i18n="Analytics">Student</div>
-                </a>
-              </li>
-              <li class="menu-item">
-                <a href="{{ route('admin.enrollment.index') }}" class="menu-link">
-                  <i class="menu-icon tf-icons bx bx-home-circle"></i>
-                  <div data-i18n="Analytics">Enrollment</div>
-                </a>
-              </li>
-
+            <!-- Election -->
+            <li class="menu-item {{ Route::is('admin.voter.*') ? 'active' : '' }}">
+              <a href="{{ route('admin.voter.index') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-home-circle"></i>
+                <div data-i18n="Analytics">Election-2024</div>
+              </a>
+            </li>
             </ul>
         </aside>
         <!-- / Menu -->
@@ -219,7 +177,7 @@
                 </div>
               </div>
               <!-- /Search -->
-              <a target="_blank" href="{{ route('frontend.home') }}" class="btn btn-primary ms-4">Visit Website</a>
+              {{-- <a target="_blank" href="{{ route('frontend.home') }}" class="btn btn-primary ms-4">Visit Website</a> --}}
 
               <ul class="navbar-nav flex-row align-items-center ms-auto">
 
@@ -227,7 +185,7 @@
                 <li class="nav-item navbar-dropdown dropdown-user dropdown">
                   <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
                     <div class="avatar avatar-online">
-                      <img src="{{ auth()->guard('admin')->user()->profile ? auth()->guard('admin')->user()->profile : env('DICEBEAR'). auth()->guard('admin')->user()->name }}" alt class="w-px-40 h-auto rounded-circle" />
+                      <img src="{{ auth()->guard('admin')->user()->profile? auth()->guard('admin')->user()->profile: env('DICEBEAR') .auth()->guard('admin')->user()->name }}" alt class="w-px-40 h-auto rounded-circle" />
                     </div>
                   </a>
                   <ul class="dropdown-menu dropdown-menu-end">
@@ -236,11 +194,11 @@
                         <div class="d-flex">
                           <div class="flex-shrink-0 me-3">
                             <div class="avatar avatar-online">
-                              <img src="{{ auth()->guard('admin')->user()->profile ? auth()->guard('admin')->user()->profile : env('DICEBEAR'). auth()->guard('admin')->user()->name }}" alt class="w-px-40 h-auto rounded-circle" />
+                              <img src="{{ auth()->guard('admin')->user()->profile? auth()->guard('admin')->user()->profile: env('DICEBEAR') .auth()->guard('admin')->user()->name }}" alt class="w-px-40 h-auto rounded-circle" />
                             </div>
                           </div>
                           <div class="flex-grow-1">
-                            <span class="fw-semibold d-block">{{auth()->guard('admin')->user()->name}}</span>
+                            <span class="fw-semibold d-block">{{ auth()->guard('admin')->user()->name }}</span>
                             <small class="text-muted">Admin</small>
                           </div>
                         </div>
@@ -253,15 +211,6 @@
                       <a class="dropdown-item" href="{{ route('admin.profile') }}">
                         <i class="bx bx-user me-2"></i>
                         <span class="align-middle">My Profile</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="#">
-                        <span class="d-flex align-items-center align-middle">
-                          <i class="flex-shrink-0 bx bx-credit-card me-2"></i>
-                          <span class="flex-grow-1 align-middle">Billing</span>
-                          <span class="flex-shrink-0 badge badge-center rounded-pill bg-danger w-px-20 h-px-20">4</span>
-                        </span>
                       </a>
                     </li>
                     <li>
